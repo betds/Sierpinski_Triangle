@@ -7,8 +7,12 @@
     <ClCompile Include="src\main.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\SierpinskiTriangle.cpp" />
-    <ClCompile Include="src\TriangleControl.cpp" />
+    <ClCompile Include="src\SierpinskiTriangle.cpp">
+      <Filter>Triangle</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TriangleControl.cpp">
+      <Filter>TriangleControl</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -17,16 +21,22 @@
     <Filter Include="addons">
       <UniqueIdentifier>{4d57d1e0-cf6e-476d-bd0e-ec979cf77c03}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Triangle">
+      <UniqueIdentifier>{0dd0c8f9-7e85-4eb0-bb33-ec7454e10cb3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TriangleControl">
+      <UniqueIdentifier>{fdeb7ccb-e386-4bee-8eae-3341f2b1e244}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ofApp.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\TriangleControl.h">
-      <Filter>src</Filter>
-    </ClInclude>
     <ClInclude Include="src\SierpinskiTriangle.h">
-      <Filter>src</Filter>
+      <Filter>Triangle</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TriangleControl.h">
+      <Filter>TriangleControl</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

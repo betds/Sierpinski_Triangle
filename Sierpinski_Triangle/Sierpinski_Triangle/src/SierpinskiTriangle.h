@@ -7,16 +7,17 @@ class SierpinskiTriangle
 {
 private:
 	vector<ofVec2f*> _vertex;
+	int _color;
 
 public:
 	// Create the first Triangle
-	SierpinskiTriangle();
+	SierpinskiTriangle(int color);
 
 	// Create a new triangle using 3 vertex coordinate
-	SierpinskiTriangle(vector<ofVec2f*> vertex);
-
-	// Return triangle vertex coordinate vector that will be formed inside this triangle
-	vector<ofVec2f*> insideTriangle();
-
+	SierpinskiTriangle(ofVec2f v1, ofVec2f v2, ofVec2f v3);
+	
 	void Draw();
+
+	vector<ofVec2f> SierpinskiCoordinate() const;
+
 };

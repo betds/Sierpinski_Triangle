@@ -1,44 +1,37 @@
 #include "SierpinskiTriangle.h"
 
-SierpinskiTriangle::SierpinskiTriangle()
+SierpinskiTriangle::SierpinskiTriangle(int color)
 {
-	int x = ofGetWindowWidth();
-	int y = ofGetWindowHeight();
+	_color = color;
 
-	_vertex.push_back(new ofVec2f(x / 2, y / 4));
-	_vertex.push_back(new ofVec2f(x / 4, y * 3 / 4));
-	_vertex.push_back(new ofVec2f(x * 3 / 4, y * 3 / 4));
+	_vertex.push_back(new ofVec2f(ofGetWindowWidth()/2, ofGetWindowHeight()/4));
+	_vertex.push_back(new ofVec2f(ofGetWindowWidth()/4, ofGetWindowHeight() * 3 / 4));
+	_vertex.push_back(new ofVec2f(ofGetWindowWidth() * 3 / 4, ofGetWindowHeight() * 3 / 4));
 }
 
-SierpinskiTriangle::SierpinskiTriangle(vector<ofVec2f*> vertex)
+SierpinskiTriangle::SierpinskiTriangle(ofVec2f v1, ofVec2f v2, ofVec2f v3)
 {
-	for (int i = 0; i < 3; i++)
-	{
-		_vertex.push_back(new ofVec2f(*vertex.at(i)));
-	}
-}
+	_color = 255;
 
-vector<ofVec2f*> SierpinskiTriangle::insideTriangle()
-{
-	vector<ofVec2f*> insTri;
-	ofVec2f v1, v2, v3;
-	v1.set(*_vertex.at(0));
-	v2.set(*_vertex.at(1));
-	v3.set(*_vertex.at(2));
-
-	insTri.push_back(new ofVec2f((v1 + v2) / 2));
-	insTri.push_back(new ofVec2f((v1 + v3) / 2));
-	insTri.push_back(new ofVec2f((v3 + v2) / 2));
-
-	return insTri;
+	_vertex.push_back(new ofVec2f(v1));
+	_vertex.push_back(new ofVec2f(v2));
+	_vertex.push_back(new ofVec2f(v3));
 }
 
 void SierpinskiTriangle::Draw()
 {
-	ofSetColor(144);
-	ofVec2f v1, v2, v3;
-	v1.set(*_vertex.at(0));
-	v2.set(*_vertex.at(1));
-	v3.set(*_vertex.at(2));
-	ofDrawTriangle(v1, v2, v3);
+	ofSetColor(_color);
+	ofDrawTriangle(*_vertex.at(0), *_vertex.at(1), *_vertex.at(2));
+	ofSetColor(255);
+}
+
+vector<ofVec2f> SierpinskiTriangle::SierpinskiCoordinate() const
+{
+	vector<ofVec2f> vert;
+	
+	vert.push_back(*_vertex.at(0));
+	vert.push_back(*_vertex.at(1));
+	vert.push_back(*_vertex.at(2));
+
+	return vert;
 }

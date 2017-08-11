@@ -1,11 +1,11 @@
 #pragma once
 
 #include "ofMain.h"
-#include "SierpinskiTriangle.h"
+#include "TriangleControl.h"
 
 class ofApp : public ofBaseApp {
 private:
-	SierpinskiTriangle *tri;
+	TriangleControl *tri;
 
 public:
 	void setup();
