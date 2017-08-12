@@ -4,6 +4,10 @@ TriangleControl::TriangleControl()
 {
 	_numberTriangles = 0;
 	_lastTriangles = 0;
+
+	_moreTri = false;
+	_lessTri = false;
+
 	_sierTri.push_back(SierpinskiTriangle(0));
 	_sierTri.push_back(SierpinskiTriangle(144));
 }
@@ -24,15 +28,15 @@ void TriangleControl::Update()
 
 		_lessTri = false;
 	}
-	std::cout << "tri: " << _numberTriangles << " || last: " << _lastTriangles << std::endl;
 
-	if (_lastTriangles > _numberTriangles || _lastTriangles < _numberTriangles)
+	if (_lastTriangles < _numberTriangles || _lastTriangles < _numberTriangles)
 	{
 		MinusTriangles((_numberTriangles - 1));
 		AddTriangles(_sierTri.at(0), _numberTriangles);
 
 		_lastTriangles = _numberTriangles;
 	}
+	std::cout << "tri: " << _numberTriangles << " || TRI: " << _sierTri.size() << std::endl;
 }
 
 void TriangleControl::Draw()
@@ -85,9 +89,9 @@ void TriangleControl::AddTriangles(SierpinskiTriangle Digo, int trigo)
 	else
 	{
 		trigo--;
-		createTriangle(createTriangle(Digo).at(0));
-		createTriangle(createTriangle(Digo).at(1));
-		createTriangle(createTriangle(Digo).at(2));
+		AddTriangles(createTriangle(Digo).at(0), trigo);
+		AddTriangles(createTriangle(Digo).at(1), trigo);
+		AddTriangles(createTriangle(Digo).at(2), trigo);
 	}
 
 }
