@@ -20,8 +20,6 @@ public:
 	//Create new 3 Triangles
 	vector<SierpinskiTriangle> createTriangle(SierpinskiTriangle Digo);
 	void AddTriangles(SierpinskiTriangle Digo, int trigo);
-	void MinusTriangles(int less);
 
 	void GetKeyPress(int a);
-	void GetKeyRelease(int a);
 };
