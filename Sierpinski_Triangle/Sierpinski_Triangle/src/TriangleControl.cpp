@@ -4,17 +4,17 @@ TriangleControl::TriangleControl()
 {
 	_numberTriangles = 0;
 	_lastTriangles = 0;
+	_amoutTri = 1;
 
 	_moreTri = false;
 	_lessTri = false;
 
-	_sierTri.push_back(SierpinskiTriangle(0));
+	_sierTri.push_back(SierpinskiTriangle(200));
 	_sierTri.push_back(SierpinskiTriangle(255));
 }
 
 void TriangleControl::Update()
 {
-	std::cout << "NumbTri: " << _numberTriangles << " || Last: " << _lastTriangles << " || Tri: " << _sierTri.size() << std::endl;
 	if (_moreTri)
 	{
 		_numberTriangles++;
@@ -36,11 +36,19 @@ void TriangleControl::Update()
 		AddTriangles(_sierTri.at(0), _numberTriangles);
 
 		_lastTriangles = _numberTriangles;
+		_amoutTri = _sierTri.size() - 1;
 	}
 }
 
 void TriangleControl::Draw()
 {
+	ofSetColor(0);
+	ofDrawBitmapString("Hello!", 10, 10);
+	ofDrawBitmapString("+ / a / z -> more Triangles", 10, 25);
+	ofDrawBitmapString("- / s / x -> less Triangles", 10, 40);
+	ofDrawBitmapString("Amout of Triangles: " + ofToString(_amoutTri), 10, 55);
+	ofSetColor(255);
+
 	for (int i = 0; i < _sierTri.size(); i++)
 	{
 		_sierTri.at(i).Draw();

@@ -7,6 +7,7 @@ class TriangleControl
 {
 private:
 	int _numberTriangles, _lastTriangles;
+	int _amoutTri;
 	bool _lessTri, _moreTri;
 	vector<SierpinskiTriangle> _sierTri;
 
