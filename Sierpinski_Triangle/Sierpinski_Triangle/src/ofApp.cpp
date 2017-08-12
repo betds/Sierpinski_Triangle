@@ -20,9 +20,9 @@ void ofApp::draw() {
 void ofApp::keyPressed(int key) {
 	int a = 0;
 
-	if (key == 'S' || key == 's')
+	if (key == 'S' || key == 's' || key == 'X' || key == 'x' || key == OF_KEY_RIGHT)
 		a = 1;
-	if (key == 'A' || key == 'a')
+	if (key == 'A' || key == 'a' || key == 'Z' || key == 'z' || key == OF_KEY_LEFT)
 		a = -1;
 
 	tri->GetKeyPress(a);

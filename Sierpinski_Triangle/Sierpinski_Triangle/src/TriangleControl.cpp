@@ -44,8 +44,8 @@ void TriangleControl::Draw()
 {
 	ofSetColor(0);
 	ofDrawBitmapString("Hello!", 10, 10);
-	ofDrawBitmapString("+ / a / z -> more Triangles", 10, 25);
-	ofDrawBitmapString("- / s / x -> less Triangles", 10, 40);
+	ofDrawBitmapString("key right / a / z -> more Triangles", 10, 25);
+	ofDrawBitmapString("key left / s / x -> less Triangles", 10, 40);
 	ofDrawBitmapString("Amout of Triangles: " + ofToString(_amoutTri), 10, 55);
 	ofSetColor(255);
 
