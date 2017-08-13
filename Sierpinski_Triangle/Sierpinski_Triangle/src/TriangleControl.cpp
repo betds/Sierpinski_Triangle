@@ -43,10 +43,10 @@ void TriangleControl::Update()
 void TriangleControl::Draw()
 {
 	ofSetColor(0);
-	ofDrawBitmapString("Hello!", 10, 10);
-	ofDrawBitmapString("key right / a / z -> more Triangles", 10, 25);
-	ofDrawBitmapString("key left / s / x -> less Triangles", 10, 40);
-	ofDrawBitmapString("Amout of Triangles: " + ofToString(_amoutTri), 10, 55);
+	ofDrawBitmapString("Hello!", 15, 15);
+	ofDrawBitmapString("key right / a / z -> more Triangles", 15, 30);
+	ofDrawBitmapString("key left / s / x -> less Triangles", 15, 45);
+	ofDrawBitmapString("Amout of Triangles: " + ofToString(_amoutTri), 15, 60);
 	ofSetColor(255);
 
 	for (int i = 0; i < _sierTri.size(); i++)
